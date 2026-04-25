@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025</title>
-  <meta name="description" content="Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025" />
+  <title>3 Diccionario de Variables | Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025</title>
+  <meta name="description" content="3 Diccionario de Variables | Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025" />
+  <meta property="og:title" content="3 Diccionario de Variables | Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="luisperez03/estadistica_computacional" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025" />
+  <meta name="twitter:title" content="3 Diccionario de Variables | Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="objetivos.html"/>
+<link rel="prev" href="objetivos.html"/>
+<link rel="next" href="analisis-exploratorio-de-datos.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -117,37 +117,55 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025</h1>
-<h2 class="subtitle"><em>Enfoque Departamental y Sociodemográfico: Evidencia de brechas territoriales y de género</em></h2>
-<p class="author"><em>Luis Alberto Perez Lopez</em></p>
-<p class="date"><em>2026-04-24</em></p>
-</div>
-<div id="resumen" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Resumen<a href="index.html#resumen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="ipm-una-visión-integral-de-la-calidad-de-vida" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> IPM: Una visión integral de la calidad de vida<a href="index.html#ipm-una-visi%C3%B3n-integral-de-la-calidad-de-vida" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>¿Qué es?</strong> El Índice de Pobreza Multidimensional (IPM) mide la pobreza más allá del dinero. Mientras la pobreza monetaria observa el ingreso, el IPM evalúa el acceso real a derechos y servicios esenciales. Es la herramienta que nos dice si una persona realmente vive con bienestar o enfrenta carencias profundas.</p>
-<p><strong>¿Cómo funciona?</strong> En Colombia, el DANE analiza <strong>5 dimensiones</strong> clave:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Educación</strong> (logro educativo y alfabetismo).</p></li>
-<li><p><strong>Niñez y Juventud</strong> (asistencia escolar y servicios de cuidado).</p></li>
-<li><p><strong>Trabajo</strong> (informalidad y desempleo).</p></li>
-<li><p><strong>Salud</strong> (aseguramiento y acceso).</p></li>
-<li><p><strong>Vivienda</strong> (servicios públicos y materiales físicos).</p></li>
-</ol>
-<p>Un hogar es oficialmente pobre multidimensional si acumula privaciones en al menos el <strong>33.3%</strong> de estos indicadores.</p>
-<p><strong>Valor para la Política Pública</strong> Su importancia radica en el <strong>diagnóstico de precisión</strong>. El IPM funciona como un mapa detallado: permite a los gobiernos identificar no solo <em>cuánta</em> gente es pobre, sino <em>en qué</em> fallan sus condiciones de vida. Así, la inversión se destina a soluciones específicas, logrando un gasto público más eficiente y con impacto social.</p>
+<div id="diccionario-de-variables" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Diccionario de Variables<a href="diccionario-de-variables.html#diccionario-de-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Para el desarrollo de este análisis, se utilizó un conjunto de datos integrado que combina dimensiones sociodemográficas, geográficas y técnicos de pobreza. A continuación, se describen las variables principales:</p>
+<p><strong>Identificadores y Control</strong></p>
+<ul>
+<li><p><strong>DIRECTORIO, SECUENCIA_P, SECUENCIA_ENCUESTA:</strong> (Numéricas/ID) Llaves primarias para la vinculación de registros entre las bases de Hogares, Personas y Viviendas.</p></li>
+<li><p><strong>FEX_C, FEXP:</strong> (Numéricas/Continuas) Factores de expansión que permiten proyectar los resultados de la muestra a la población total de Colombia.</p></li>
+<li><p><strong>PERIODO:</strong> (Numérica/Factor) Indica la vigencia temporal de la encuesta (2025).</p></li>
+</ul>
+<p><strong>Ubicación y Geografía</strong></p>
+<ul>
+<li><p><strong>REGION:</strong> (Categórica) Agrupación regional definida por el DANE (e.g., Caribe, Central, Pacífica).</p></li>
+<li><p><strong>DEPARTAMENTO:</strong> (Categórica) Código administrativo de la unidad territorial.</p></li>
+<li><p><strong>P3:</strong> (Categórica) Clase de territorio: Cabecera, Centro Poblado o Rural Disperso.</p></li>
+</ul>
+<p><strong>Indicadores de Privación (Dicotómicas: 1 = Privado, 0 = No Privado)</strong> Estas variables representan los 15 indicadores del IPM oficial:</p>
+<ul>
+<li><p><strong>Educación:</strong> <code>logro_educativo</code>, <code>analfabetismo</code>.</p></li>
+<li><p><strong>Niñez y Juventud:</strong> <code>inasistencia_escolar</code>, <code>rezago_escolar</code>, <code>atencion_integral</code>, <code>trabajo_infantil</code>.</p></li>
+<li><p><strong>Salud:</strong> <code>aseguramiento_salud</code>, <code>barreras_acceso_salud</code>.</p></li>
+<li><p><strong>Trabajo:</strong> <code>desempleo_larga_duracion</code>, <code>empleo_formal</code>.</p></li>
+<li><p><strong>Vivienda y Servicios:</strong> <code>acueducto</code>, <code>alcantarillado</code>, <code>pisos</code>, <code>paredes</code>, <code>hacinamiento</code>.</p></li>
+</ul>
+<p><strong>Variables de Pobreza (Resultantes)</strong></p>
+<ul>
+<li><p><strong>IPM:</strong> (Numérica/Continua) Índice de Pobreza Multidimensional calculado; representa la proporción de privaciones acumuladas por el hogar (valor entre 0 y 1).</p></li>
+<li><p><strong>POBRE:</strong> (Dicotómica) Variable de estado; toma el valor de 1 si el IPM es <span class="math inline">\(\geq 0.333\)</span> y 0 en caso contrario.</p></li>
+</ul>
+<p><strong>Perfil Sociodemográfico y Jefatura</strong></p>
+<ul>
+<li><p><strong>P6020 (jefe/conyuge):</strong> (Categórica) Sexo del jefe de hogar o cónyuge (1: Hombre, 2: Mujer).</p></li>
+<li><p><strong>P8587 (jefe/conyuge):</strong> (Numérica) Nivel educativo alcanzado por el jefe o cónyuge.</p></li>
+<li><p><strong>soltero:</strong> (Dicotómica) Variable construida para identificar hogares con jefatura monoparental.</p></li>
+<li><p><strong>PERSONAS (P5010):</strong> (Numérica) Total de personas que integran el hogar.</p></li>
+</ul>
+<p><strong>Características de la Vivienda</strong></p>
+<ul>
+<li><p><strong>P4005, P4015:</strong> (Categóricas) Variables sobre tenencia de la vivienda y servicios específicos.</p></li>
+<li><p><strong>P1075, P1077S21-S23:</strong> (Categóricas) Variables técnicas sobre materiales de construcción y acceso a infraestructura de servicios públicos.</p></li>
+</ul>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="objetivos.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="objetivos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analisis-exploratorio-de-datos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -201,6 +219,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
