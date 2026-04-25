@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Analisis Exploratorio de Datos | Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025</title>
+  <meta name="description" content="3 Analisis Exploratorio de Datos | Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Analisis Exploratorio de Datos | Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="luisperez03/estadistica_computacional" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Analisis Exploratorio de Datos | Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025" />
+  
+  
+  
+
+<meta name="author" content="Luis Alberto Perez Lopez" />
+
+
+<meta name="date" content="2026-04-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="objetivos.html"/>
+<link rel="next" href="conclusiónes-la-geografía-y-estructura-de-la-privación.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Analisis de Pobreza Multidimensional en Colombia  - Microdatos 2025</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Resumen</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#ipm-una-visi%C3%B3n-integral-de-la-calidad-de-vida"><i class="fa fa-check"></i><b>1.1</b> IPM: Una visión integral de la calidad de vida</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="objetivos.html"><a href="objetivos.html"><i class="fa fa-check"></i><b>2</b> Objetivos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="objetivos.html"><a href="objetivos.html#objetivo-general"><i class="fa fa-check"></i><b>2.1</b> Objetivo General</a></li>
+<li class="chapter" data-level="2.2" data-path="objetivos.html"><a href="objetivos.html#objetivos-espec%C3%ADficos"><i class="fa fa-check"></i><b>2.2</b> Objetivos Específicos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html"><i class="fa fa-check"></i><b>3</b> Analisis Exploratorio de Datos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html#carga-y-limpieza-de-los-microdatos"><i class="fa fa-check"></i><b>3.1</b> Carga y limpieza de los microdatos</a></li>
+<li class="chapter" data-level="3.2" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html#distribuci%C3%B3n-del-ipm-el-term%C3%B3metro-de-carencias"><i class="fa fa-check"></i><b>3.2</b> Distribución del IPM: El “Termómetro” de Carencias</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html#visualizaci%C3%B3n-cuart%C3%ADlica-y-frecuencia"><i class="fa fa-check"></i><b>3.2.1</b> Visualización Cuartílica y Frecuencia</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html#incidencia-h-el-dato-oficial"><i class="fa fa-check"></i><b>3.3</b> Incidencia (H): El dato oficial</a></li>
+<li class="chapter" data-level="3.4" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html#composici%C3%B3n-de-la-pobreza-perfil-de-privaciones"><i class="fa fa-check"></i><b>3.4</b> Composición de la Pobreza: Perfil de Privaciones</a></li>
+<li class="chapter" data-level="3.5" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html#brechas-territoriales-regi%C3%B3n-y-clase-p3"><i class="fa fa-check"></i><b>3.5</b> Brechas Territoriales: Región y Clase (P3)</a></li>
+<li class="chapter" data-level="3.6" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html#perspectiva-de-g%C3%A9nero-en-la-jefatura"><i class="fa fa-check"></i><b>3.6</b> Perspectiva de Género en la Jefatura</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="conclusiónes-la-geografía-y-estructura-de-la-privación.html"><a href="conclusiónes-la-geografía-y-estructura-de-la-privación.html"><i class="fa fa-check"></i><b>4</b> Conclusiónes: La Geografía y Estructura de la Privación</a></li>
+<li class="chapter" data-level="5" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>5</b> Referencias</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análisis de Pobreza Multidimensional en Colombia - Microdatos 2025</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analisis-exploratorio-de-datos" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Analisis Exploratorio de Datos<a href="analisis-exploratorio-de-datos.html#analisis-exploratorio-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Este análisis exploratorio de datos (EDA) examina la pobreza multidimensional en Colombia bajo una óptica integral, con el finde identificar las carencias estructurales en el acceso a derechos básicos. A través de la integración de microdatos de hogares, personas y viviendas, observando la incidencia de la pobreza mediante el Índice de Pobreza Multidimensional (IPM), desglosando el impacto de las 15 privaciones definidas por el DANE.
+Profundizando en las diferencias territoriales, entre lo urbano y lo rural, la heterogeneidad regional, la composicion de la pobreza y las brechas de género en la jefatura del hogar.</p>
+<div id="carga-y-limpieza-de-los-microdatos" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Carga y limpieza de los microdatos<a href="analisis-exploratorio-de-datos.html#carga-y-limpieza-de-los-microdatos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Integramos las tres fuentes principales. Aquí cruzo la jefatura del hogar con las condiciones de vivienda para tener el perfil sociodemográfico completo.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="analisis-exploratorio-de-datos.html#cb1-1" tabindex="-1"></a><span class="do">## Cargamos los archivos crudos del 2025</span></span>
+<span id="cb1-2"><a href="analisis-exploratorio-de-datos.html#cb1-2" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;HOGARES (DEPARTAMENTAL) 2025.csv&quot;</span>)</span>
+<span id="cb1-3"><a href="analisis-exploratorio-de-datos.html#cb1-3" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;PERSONAS (DEPARTAMENTAL) 2025.csv&quot;</span>)</span>
+<span id="cb1-4"><a href="analisis-exploratorio-de-datos.html#cb1-4" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;VIVIENDAS (DEPARTAMENTAL) 2025.csv&quot;</span>)</span>
+<span id="cb1-5"><a href="analisis-exploratorio-de-datos.html#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="analisis-exploratorio-de-datos.html#cb1-6" tabindex="-1"></a><span class="do">## Extraigo jefatura (P6051 == 1) y cónyuge para identificar hogares solteros</span></span>
+<span id="cb1-7"><a href="analisis-exploratorio-de-datos.html#cb1-7" tabindex="-1"></a>jefe <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-8"><a href="analisis-exploratorio-de-datos.html#cb1-8" tabindex="-1"></a>  <span class="fu">filter</span>(P6051 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a href="analisis-exploratorio-de-datos.html#cb1-9" tabindex="-1"></a>  <span class="fu">select</span>(DIRECTORIO, P6020, P8587) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-10"><a href="analisis-exploratorio-de-datos.html#cb1-10" tabindex="-1"></a>  <span class="fu">distinct</span>(DIRECTORIO, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-11"><a href="analisis-exploratorio-de-datos.html#cb1-11" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="analisis-exploratorio-de-datos.html#cb1-12" tabindex="-1"></a>conyuge <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-13"><a href="analisis-exploratorio-de-datos.html#cb1-13" tabindex="-1"></a>  <span class="fu">filter</span>(P6051 <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-14"><a href="analisis-exploratorio-de-datos.html#cb1-14" tabindex="-1"></a>  <span class="fu">select</span>(DIRECTORIO, P6020, P8587) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-15"><a href="analisis-exploratorio-de-datos.html#cb1-15" tabindex="-1"></a>  <span class="fu">distinct</span>(DIRECTORIO, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-16"><a href="analisis-exploratorio-de-datos.html#cb1-16" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="analisis-exploratorio-de-datos.html#cb1-17" tabindex="-1"></a><span class="do">## Unión de bases: Vivienda + Hogar + Perfil del Jefe</span></span>
+<span id="cb1-18"><a href="analisis-exploratorio-de-datos.html#cb1-18" tabindex="-1"></a>jefe_full <span class="ot">&lt;-</span> jefe <span class="sc">%&gt;%</span> </span>
+<span id="cb1-19"><a href="analisis-exploratorio-de-datos.html#cb1-19" tabindex="-1"></a>  <span class="fu">left_join</span>(conyuge, <span class="at">by =</span> <span class="st">&quot;DIRECTORIO&quot;</span>, <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">&quot;_jefe&quot;</span>, <span class="st">&quot;_conyuge&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-20"><a href="analisis-exploratorio-de-datos.html#cb1-20" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">soltero =</span> <span class="fu">if_else</span>(<span class="sc">!</span><span class="fu">is.na</span>(P6020_conyuge), <span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb1-21"><a href="analisis-exploratorio-de-datos.html#cb1-21" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="analisis-exploratorio-de-datos.html#cb1-22" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb1-23"><a href="analisis-exploratorio-de-datos.html#cb1-23" tabindex="-1"></a>  <span class="fu">left_join</span>(jefe_full, <span class="at">by =</span><span class="st">&quot;DIRECTORIO&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-24"><a href="analisis-exploratorio-de-datos.html#cb1-24" tabindex="-1"></a>  <span class="fu">left_join</span>(df3 <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>SECUENCIA_ENCUESTA, <span class="sc">-</span>SECUENCIA_P), <span class="at">by =</span><span class="st">&quot;DIRECTORIO&quot;</span>)</span>
+<span id="cb1-25"><a href="analisis-exploratorio-de-datos.html#cb1-25" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="analisis-exploratorio-de-datos.html#cb1-26" tabindex="-1"></a><span class="do">## Ajuste de NA en variables de servicios y filtro de región</span></span>
+<span id="cb1-27"><a href="analisis-exploratorio-de-datos.html#cb1-27" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb1-28"><a href="analisis-exploratorio-de-datos.html#cb1-28" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(P1075, P1077S21, P1077S22, P1077S23), <span class="sc">~</span><span class="fu">replace_na</span>(., <span class="dv">2</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb1-29"><a href="analisis-exploratorio-de-datos.html#cb1-29" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(REGION))</span></code></pre></div>
+<hr />
+</div>
+<div id="distribución-del-ipm-el-termómetro-de-carencias" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Distribución del IPM: El “Termómetro” de Carencias<a href="analisis-exploratorio-de-datos.html#distribuci%C3%B3n-del-ipm-el-term%C3%B3metro-de-carencias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Antes de dicotomizar (pobre/no pobre), analizamos el IPM como variable continua. Esto nos muestra qué tan cerca está la población del umbral crítico.</p>
+<div id="visualización-cuartílica-y-frecuencia" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Visualización Cuartílica y Frecuencia<a href="analisis-exploratorio-de-datos.html#visualizaci%C3%B3n-cuart%C3%ADlica-y-frecuencia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El histograma nos permite ver la masa de población que está “en riesgo” (cerca del 0.33), mientras que el boxplot resume la dispersión nacional.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="analisis-exploratorio-de-datos.html#cb2-1" tabindex="-1"></a><span class="do">## Diseño muestral para cálculos precisos</span></span>
+<span id="cb2-2"><a href="analisis-exploratorio-de-datos.html#cb2-2" tabindex="-1"></a>diseno <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">as_survey_design</span>(<span class="at">weights =</span> FEXP)</span>
+<span id="cb2-3"><a href="analisis-exploratorio-de-datos.html#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="analisis-exploratorio-de-datos.html#cb2-4" tabindex="-1"></a><span class="do">## 1. Histograma de frecuencias</span></span>
+<span id="cb2-5"><a href="analisis-exploratorio-de-datos.html#cb2-5" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> IPM, <span class="at">weight =</span> FEXP)) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="analisis-exploratorio-de-datos.html#cb2-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">fill =</span> <span class="st">&quot;#31688e&quot;</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="analisis-exploratorio-de-datos.html#cb2-7" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.333</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="analisis-exploratorio-de-datos.html#cb2-8" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">unit_format</span>(<span class="at">unit =</span> <span class="st">&quot;M&quot;</span>, <span class="at">scale =</span> <span class="fl">1e-6</span>)) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="analisis-exploratorio-de-datos.html#cb2-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribución Poblacional del IPM&quot;</span>,</span>
+<span id="cb2-10"><a href="analisis-exploratorio-de-datos.html#cb2-10" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;La masa a la derecha de la línea roja representa a la población pobre&quot;</span>,</span>
+<span id="cb2-11"><a href="analisis-exploratorio-de-datos.html#cb2-11" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Índice de Pobreza Multidimensional&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Millones de Personas&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="analisis-exploratorio-de-datos.html#cb2-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="Analisis-IPM-2025_files/figure-html/histograma_y_box-1.png" alt="" width="960" /></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="analisis-exploratorio-de-datos.html#cb3-1" tabindex="-1"></a><span class="do">## 2. Boxplot descriptivo</span></span>
+<span id="cb3-2"><a href="analisis-exploratorio-de-datos.html#cb3-2" tabindex="-1"></a>res_y <span class="ot">&lt;-</span> diseno <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="analisis-exploratorio-de-datos.html#cb3-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb3-4"><a href="analisis-exploratorio-de-datos.html#cb3-4" tabindex="-1"></a>    <span class="at">promedio =</span> <span class="fu">survey_mean</span>(IPM, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-5"><a href="analisis-exploratorio-de-datos.html#cb3-5" tabindex="-1"></a>    <span class="at">desviacion =</span> <span class="fu">survey_sd</span>(IPM, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-6"><a href="analisis-exploratorio-de-datos.html#cb3-6" tabindex="-1"></a>    <span class="at">minimo =</span> <span class="fu">min</span>(IPM, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-7"><a href="analisis-exploratorio-de-datos.html#cb3-7" tabindex="-1"></a>    <span class="at">maximo =</span> <span class="fu">max</span>(IPM, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-8"><a href="analisis-exploratorio-de-datos.html#cb3-8" tabindex="-1"></a>    <span class="at">q1 =</span> <span class="fu">survey_quantile</span>(IPM, <span class="fl">0.25</span>),</span>
+<span id="cb3-9"><a href="analisis-exploratorio-de-datos.html#cb3-9" tabindex="-1"></a>    <span class="at">q2 =</span> <span class="fu">survey_quantile</span>(IPM,  <span class="fl">0.5</span>),</span>
+<span id="cb3-10"><a href="analisis-exploratorio-de-datos.html#cb3-10" tabindex="-1"></a>    <span class="at">q3 =</span> <span class="fu">survey_quantile</span>(IPM, <span class="fl">0.75</span>)</span>
+<span id="cb3-11"><a href="analisis-exploratorio-de-datos.html#cb3-11" tabindex="-1"></a>  )</span>
+<span id="cb3-12"><a href="analisis-exploratorio-de-datos.html#cb3-12" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="analisis-exploratorio-de-datos.html#cb3-13" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="analisis-exploratorio-de-datos.html#cb3-14" tabindex="-1"></a><span class="fu">ggplot</span>(res_y) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="analisis-exploratorio-de-datos.html#cb3-15" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> minimo, <span class="at">lower =</span> q1_q25, <span class="at">middle =</span> promedio, <span class="at">upper =</span> q3_q75, <span class="at">ymax =</span> maximo, <span class="at">x =</span> <span class="st">&quot;Colombia&quot;</span>),</span>
+<span id="cb3-16"><a href="analisis-exploratorio-de-datos.html#cb3-16" tabindex="-1"></a>                <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;#35b779&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#2c3e50&quot;</span>, <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="analisis-exploratorio-de-datos.html#cb3-17" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.333</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-18"><a href="analisis-exploratorio-de-datos.html#cb3-18" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb3-19"><a href="analisis-exploratorio-de-datos.html#cb3-19" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Resumen Estadístico del IPM&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Puntaje&quot;</span>, <span class="at">x =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-20"><a href="analisis-exploratorio-de-datos.html#cb3-20" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="Analisis-IPM-2025_files/figure-html/histograma_y_box-2.png" alt="" width="960" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="analisis-exploratorio-de-datos.html#cb4-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(res_y <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="analisis-exploratorio-de-datos.html#cb4-2" tabindex="-1"></a>               <span class="fu">select</span>(promedio,desviacion, minimo, maximo, q1_q25, q2_q50, q3_q75))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">promedio</th>
+<th align="right">desviacion</th>
+<th align="right">minimo</th>
+<th align="right">maximo</th>
+<th align="right">q1_q25</th>
+<th align="right">q2_q50</th>
+<th align="right">q3_q75</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.1706441</td>
+<td align="right">0.1199547</td>
+<td align="right">0</td>
+<td align="right">0.86</td>
+<td align="right">0.1</td>
+<td align="right">0.15</td>
+<td align="right">0.25</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>El IPM poblacional presenta un promedio de 0.1706 (</strong><span class="math inline">\(sd=0.119\)</span>). Adicionalmente el análisis por cuantiles muestra que al menos el <strong>75% de la población</strong> alcanza un índice de hasta <strong>0.25</strong>, lo que equivale a una acumulación de <strong>3 a 4 privaciones</strong> según la ponderación del índice. Esto ubica a la gran mayoría de la población en una <strong>zona de vulnerabilidad crítica</strong>, pues estan a solo 1 o 2 carencias adicionales de superar el umbral de <strong>0.33</strong> y ser clasificados formalmente bajo la condición de pobreza multidimensional.</li>
+<li><strong>Sesgo a la derecha y Concentración</strong>: La distribución no es normal; está fuertemente sesgada a la derecha. Esto indica que, aunque la mayoría de la población tiene niveles bajos de privación, existe una “cola” de personas que acumulan múltiples carencias críticas y simultáneas.</li>
+<li><strong>Umbral de pobreza:</strong> La línea roja en <span class="math inline">\(0.33\)</span> es el punto de corte. Solo la masa de población a la derecha de esa línea es considerada técnicamente <strong>pobre multidimensional</strong>, lo que permite separar visualmente la incidencia del problema.</li>
+<li><strong>Volumen Absoluto vs. Proporción:</strong> la grafica se encuentra en millones de personas en lugar de una densidad de probabilidad, el gráfico resalta la <strong>magnitud real</strong> de la situacion social y Permite dimensionar, aunque las barras de la derecha sean más bajas, representan a millones de personas en situación de vulnerabilidad.</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="incidencia-h-el-dato-oficial" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Incidencia (H): El dato oficial<a href="analisis-exploratorio-de-datos.html#incidencia-h-el-dato-oficial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La <strong>Incidencia (H)</strong> nos dice qué porcentaje de la población es pobre. Aquí vemos la foto general del país.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="analisis-exploratorio-de-datos.html#cb5-1" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb5-2"><a href="analisis-exploratorio-de-datos.html#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="analisis-exploratorio-de-datos.html#cb5-3" tabindex="-1"></a><span class="do">## 1. Preparamos los datos con la etiqueta ya lista</span></span>
+<span id="cb5-4"><a href="analisis-exploratorio-de-datos.html#cb5-4" tabindex="-1"></a>tabla_pobreza <span class="ot">&lt;-</span> diseno <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="analisis-exploratorio-de-datos.html#cb5-5" tabindex="-1"></a>  <span class="fu">group_by</span>(POBRE) <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="analisis-exploratorio-de-datos.html#cb5-6" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb5-7"><a href="analisis-exploratorio-de-datos.html#cb5-7" tabindex="-1"></a>    <span class="at">conteo_millones =</span> <span class="fu">survey_total</span>() <span class="sc">/</span> <span class="fl">1e6</span>, </span>
+<span id="cb5-8"><a href="analisis-exploratorio-de-datos.html#cb5-8" tabindex="-1"></a>    <span class="at">proporcion =</span> <span class="fu">survey_mean</span>()</span>
+<span id="cb5-9"><a href="analisis-exploratorio-de-datos.html#cb5-9" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb5-10"><a href="analisis-exploratorio-de-datos.html#cb5-10" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-11"><a href="analisis-exploratorio-de-datos.html#cb5-11" tabindex="-1"></a>    <span class="at">condicion =</span> <span class="fu">ifelse</span>(POBRE <span class="sc">==</span> <span class="dv">1</span>, <span class="st">&quot;Pobre&quot;</span>, <span class="st">&quot;No Pobre&quot;</span>),</span>
+<span id="cb5-12"><a href="analisis-exploratorio-de-datos.html#cb5-12" tabindex="-1"></a>    <span class="at">etiqueta =</span> <span class="fu">paste0</span>(<span class="fu">percent</span>(proporcion, <span class="at">accuracy =</span> <span class="fl">0.1</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="fu">round</span>(conteo_millones, <span class="dv">2</span>), <span class="st">&quot;M&quot;</span>)</span>
+<span id="cb5-13"><a href="analisis-exploratorio-de-datos.html#cb5-13" tabindex="-1"></a>  )</span>
+<span id="cb5-14"><a href="analisis-exploratorio-de-datos.html#cb5-14" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="analisis-exploratorio-de-datos.html#cb5-15" tabindex="-1"></a><span class="do">## 2. Graficamos</span></span>
+<span id="cb5-16"><a href="analisis-exploratorio-de-datos.html#cb5-16" tabindex="-1"></a><span class="fu">ggplot</span>(tabla_pobreza, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> proporcion, <span class="at">fill =</span> condicion)) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="analisis-exploratorio-de-datos.html#cb5-17" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">width =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-18"><a href="analisis-exploratorio-de-datos.html#cb5-18" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="st">&quot;y&quot;</span>, <span class="at">start =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="analisis-exploratorio-de-datos.html#cb5-19" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> etiqueta), </span>
+<span id="cb5-20"><a href="analisis-exploratorio-de-datos.html#cb5-20" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>), </span>
+<span id="cb5-21"><a href="analisis-exploratorio-de-datos.html#cb5-21" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, </span>
+<span id="cb5-22"><a href="analisis-exploratorio-de-datos.html#cb5-22" tabindex="-1"></a>            <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-23"><a href="analisis-exploratorio-de-datos.html#cb5-23" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;No Pobre&quot;</span> <span class="ot">=</span> <span class="st">&quot;#2c3e50&quot;</span>, <span class="st">&quot;Pobre&quot;</span> <span class="ot">=</span> <span class="st">&quot;#c0392b&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb5-24"><a href="analisis-exploratorio-de-datos.html#cb5-24" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Incidencia General de Pobreza Multidimensional&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Estado&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-25"><a href="analisis-exploratorio-de-datos.html#cb5-25" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="Analisis-IPM-2025_files/figure-html/incidencia_pie-1.png" alt="" width="960" /></p>
+<p>A un nivel poblacional, el 10% de los colombianos esta clasificado como pobre dimensional, esto se traduce en 5.41 millones de personas, equivale a la población total de un país como <strong>Costa Rica</strong> o la población total de países de la Unión Europea como <strong>Irlanda</strong> o <strong>Croacia</strong>. En términos comparativos, estamos analizando una masa poblacional equivalente a la totalidad de los habitantes de <strong>Noruega</strong>, lo que resalta la escala masiva del desafío para la política pública nacional.</p>
+<hr />
+</div>
+<div id="composición-de-la-pobreza-perfil-de-privaciones" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Composición de la Pobreza: Perfil de Privaciones<a href="analisis-exploratorio-de-datos.html#composici%C3%B3n-de-la-pobreza-perfil-de-privaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Filtramos solo a los pobres para entender qué carencias comparten.</p>
+<p><strong>Nota:</strong> La informalidad y el bajo logro educativo suelen ser casi universales en este grupo.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="analisis-exploratorio-de-datos.html#cb6-1" tabindex="-1"></a><span class="do">## Análisis de incidencia dentro del grupo de pobres</span></span>
+<span id="cb6-2"><a href="analisis-exploratorio-de-datos.html#cb6-2" tabindex="-1"></a>resumen_privaciones <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="analisis-exploratorio-de-datos.html#cb6-3" tabindex="-1"></a>  <span class="fu">filter</span>(POBRE <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-4"><a href="analisis-exploratorio-de-datos.html#cb6-4" tabindex="-1"></a>  <span class="fu">as_survey_design</span>(<span class="at">weights =</span> FEXP) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="analisis-exploratorio-de-datos.html#cb6-5" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="dv">11</span><span class="sc">:</span><span class="dv">25</span>, <span class="fu">list</span>(<span class="at">proporcion =</span> <span class="sc">~</span><span class="fu">survey_mean</span>(.x <span class="sc">==</span> <span class="dv">1</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))))</span>
+<span id="cb6-6"><a href="analisis-exploratorio-de-datos.html#cb6-6" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="analisis-exploratorio-de-datos.html#cb6-7" tabindex="-1"></a>tabla_final_privaciones <span class="ot">&lt;-</span> resumen_privaciones <span class="sc">%&gt;%</span></span>
+<span id="cb6-8"><a href="analisis-exploratorio-de-datos.html#cb6-8" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">&quot;Variable&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;proporcion&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="analisis-exploratorio-de-datos.html#cb6-9" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(Variable, <span class="st">&quot;_se$&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-10"><a href="analisis-exploratorio-de-datos.html#cb6-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Variable =</span> <span class="fu">str_remove</span>(Variable, <span class="st">&quot;_proporcion&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-11"><a href="analisis-exploratorio-de-datos.html#cb6-11" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(proporcion))</span>
+<span id="cb6-12"><a href="analisis-exploratorio-de-datos.html#cb6-12" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="analisis-exploratorio-de-datos.html#cb6-13" tabindex="-1"></a><span class="do">## Gráfico de barras comparativo</span></span>
+<span id="cb6-14"><a href="analisis-exploratorio-de-datos.html#cb6-14" tabindex="-1"></a><span class="fu">ggplot</span>(tabla_final_privaciones, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Variable, proporcion), <span class="at">y =</span> proporcion)) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="analisis-exploratorio-de-datos.html#cb6-15" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;firebrick&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="analisis-exploratorio-de-datos.html#cb6-16" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">percent</span>(proporcion, <span class="at">accuracy =</span> <span class="fl">0.1</span>)), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb6-17"><a href="analisis-exploratorio-de-datos.html#cb6-17" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb6-18"><a href="analisis-exploratorio-de-datos.html#cb6-18" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.1</span>)) <span class="sc">+</span></span>
+<span id="cb6-19"><a href="analisis-exploratorio-de-datos.html#cb6-19" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;¿Qué dimensiones afectan más a los pobres?&quot;</span>,</span>
+<span id="cb6-20"><a href="analisis-exploratorio-de-datos.html#cb6-20" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Frecuencia de privación por indicador (Solo población Pobre)&quot;</span>,</span>
+<span id="cb6-21"><a href="analisis-exploratorio-de-datos.html#cb6-21" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Indicador&quot;</span>, <span class="at">y =</span> <span class="st">&quot;% de incidencia en el grupo&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-22"><a href="analisis-exploratorio-de-datos.html#cb6-22" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="Analisis-IPM-2025_files/figure-html/carencias-1.png" alt="" width="960" /></p>
+<p>Estos factores presnetan como esta compuesta la pobreza en colombia, mostrando una fuerte presencia de desempleo, carencias de condiciones academicas y acceso a servicios publicos.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="analisis-exploratorio-de-datos.html#cb7-1" tabindex="-1"></a><span class="do">## 1. Preparación de datos incluyendo FEXP</span></span>
+<span id="cb7-2"><a href="analisis-exploratorio-de-datos.html#cb7-2" tabindex="-1"></a>df_solo_carencia_pesado <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="analisis-exploratorio-de-datos.html#cb7-3" tabindex="-1"></a>  <span class="fu">filter</span>(POBRE <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="analisis-exploratorio-de-datos.html#cb7-4" tabindex="-1"></a>  <span class="fu">select</span>(IPM, FEXP, <span class="dv">11</span><span class="sc">:</span><span class="dv">25</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-5"><a href="analisis-exploratorio-de-datos.html#cb7-5" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="sc">-</span>IPM, <span class="sc">-</span>FEXP), <span class="at">names_to =</span> <span class="st">&quot;Indicador&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Privacion&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="analisis-exploratorio-de-datos.html#cb7-6" tabindex="-1"></a>  <span class="fu">filter</span>(Privacion <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb7-7"><a href="analisis-exploratorio-de-datos.html#cb7-7" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="analisis-exploratorio-de-datos.html#cb7-8" tabindex="-1"></a><span class="do">## 2. Gráfico con pesos poblacionales</span></span>
+<span id="cb7-9"><a href="analisis-exploratorio-de-datos.html#cb7-9" tabindex="-1"></a><span class="fu">ggplot</span>(df_solo_carencia_pesado, </span>
+<span id="cb7-10"><a href="analisis-exploratorio-de-datos.html#cb7-10" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Indicador, IPM, <span class="at">FUN =</span> <span class="cf">function</span>(x) <span class="fu">weighted.mean</span>(x, <span class="at">w =</span> df_solo_carencia_pesado<span class="sc">$</span>FEXP[<span class="fu">match</span>(x, df_solo_carencia_pesado<span class="sc">$</span>IPM)])), </span>
+<span id="cb7-11"><a href="analisis-exploratorio-de-datos.html#cb7-11" tabindex="-1"></a>           <span class="at">y =</span> IPM, </span>
+<span id="cb7-12"><a href="analisis-exploratorio-de-datos.html#cb7-12" tabindex="-1"></a>           <span class="at">weight =</span> FEXP)) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="analisis-exploratorio-de-datos.html#cb7-13" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;firebrick&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">outlier.alpha =</span> <span class="fl">0.2</span>, <span class="at">outlier.size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="analisis-exploratorio-de-datos.html#cb7-14" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb7-15"><a href="analisis-exploratorio-de-datos.html#cb7-15" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-16"><a href="analisis-exploratorio-de-datos.html#cb7-16" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Intensidad del IPM según Dimensión (Población Pobre)&quot;</span>,</span>
+<span id="cb7-17"><a href="analisis-exploratorio-de-datos.html#cb7-17" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Distribución ponderada por Factor de Expansión (FEXP)&quot;</span>,</span>
+<span id="cb7-18"><a href="analisis-exploratorio-de-datos.html#cb7-18" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Indicador de Privación&quot;</span>,</span>
+<span id="cb7-19"><a href="analisis-exploratorio-de-datos.html#cb7-19" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Valor del IPM (Intensidad)&quot;</span></span>
+<span id="cb7-20"><a href="analisis-exploratorio-de-datos.html#cb7-20" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-21"><a href="analisis-exploratorio-de-datos.html#cb7-21" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb7-22"><a href="analisis-exploratorio-de-datos.html#cb7-22" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb7-23"><a href="analisis-exploratorio-de-datos.html#cb7-23" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb7-24"><a href="analisis-exploratorio-de-datos.html#cb7-24" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>)</span>
+<span id="cb7-25"><a href="analisis-exploratorio-de-datos.html#cb7-25" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="Analisis-IPM-2025_files/figure-html/carencias%20sensibilidad-1.png" alt="" width="960" /></p>
+<p>Este grafico nos permite permite identificar qué privaciones pesan mas sobre el un IPM. el grafico representa la realidad de los 5.41 millones de personas identificadas en pobreza.</p>
+<p><strong>Simultaneidad de privaciones:</strong> Indicadores como “Paredes”, “Inasistencia Escolar” y “Trabajo Infantil” presentan las medianas de IPM más altas (desplazadas hacia la derecha). Esto indica que estas privaciones no suelen presentarse solas, es decir una persona con deficiencias en la estructura de su vivienda o con niños fuera del sistema escolar tiende a acumular un paquete de privaciones mucho más pesado, elevando su índice cerca del 0.45 - 0.50.</p>
+<p><strong>Carencias Base vs. Carencias Críticas:</strong> Es notable que el “Empleo Formal” y el “Logro Educativo”, a pesar de ser los más frecuentes en la población (según el gráfico de barras anterior), tienen medianas de intensidad más bajas y cajas más compactas. Esto confirma que son carencias comunes o transversales ya que afectan tanto a los “pobres extremos” como a los que están apenas por encima del umbral de 0.33, no son por si solas la razon de la pobreza, sino que son comun denominador del inicio de la pobreza multidimensional.</p>
+<p><strong>Heterogeneidad y Casos Críticos (Outliers):</strong> La presencia de valores extremos que alcanzan un IPM de 0.8 en dimensiones como “Acueducto”, “Alcantarillado” e “Inasistencia Escolar” revela la existencia de focos de pobreza multidimensional extrema. Estos individuos sufren privaciones en casi la totalidad de las 15 dimensiones analizadas, ellos representan los desafíos más urgentes para la política pública.</p>
+<p>Conclusión para la política pública: Mientras que el empleo formal es el problema más extendido, la intervención en vivienda (paredes y hacinamiento) y educación infantil es lo que más rápido podría reducir la “intensidad” de la pobreza, ya que son las dimensiones que mantienen a los hogares atrapados en los valores más altos del IPM.</p>
+<hr />
+</div>
+<div id="brechas-territoriales-región-y-clase-p3" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Brechas Territoriales: Región y Clase (P3)<a href="analisis-exploratorio-de-datos.html#brechas-territoriales-regi%C3%B3n-y-clase-p3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Aquí cruzamos las regiones con el tipo de asentamiento. Es evidente el “gradiente de pobreza”: a mayor ruralidad, mayor incidencia.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="analisis-exploratorio-de-datos.html#cb8-1" tabindex="-1"></a>nombres_regiones <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1&quot;</span> <span class="ot">=</span> <span class="st">&quot;Caribe&quot;</span>, <span class="st">&quot;2&quot;</span> <span class="ot">=</span> <span class="st">&quot;Oriental&quot;</span>, <span class="st">&quot;3&quot;</span> <span class="ot">=</span> <span class="st">&quot;Central&quot;</span>, </span>
+<span id="cb8-2"><a href="analisis-exploratorio-de-datos.html#cb8-2" tabindex="-1"></a>                      <span class="st">&quot;4&quot;</span> <span class="ot">=</span> <span class="st">&quot;Pacífica&quot;</span>, <span class="st">&quot;5&quot;</span> <span class="ot">=</span> <span class="st">&quot;Antioquia&quot;</span>, <span class="st">&quot;6&quot;</span> <span class="ot">=</span> <span class="st">&quot;Bogotá&quot;</span>)</span>
+<span id="cb8-3"><a href="analisis-exploratorio-de-datos.html#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="analisis-exploratorio-de-datos.html#cb8-4" tabindex="-1"></a>tabla_plot <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="analisis-exploratorio-de-datos.html#cb8-5" tabindex="-1"></a>  <span class="fu">as_survey_design</span>(<span class="at">weights =</span> FEXP) <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="analisis-exploratorio-de-datos.html#cb8-6" tabindex="-1"></a>  <span class="fu">group_by</span>(REGION, P3) <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="analisis-exploratorio-de-datos.html#cb8-7" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">incidencia =</span> <span class="fu">survey_mean</span>(POBRE, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="analisis-exploratorio-de-datos.html#cb8-8" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-9"><a href="analisis-exploratorio-de-datos.html#cb8-9" tabindex="-1"></a>    <span class="at">Nombre_Region =</span> nombres_regiones[<span class="fu">as.character</span>(REGION)],</span>
+<span id="cb8-10"><a href="analisis-exploratorio-de-datos.html#cb8-10" tabindex="-1"></a>    <span class="at">Tipo_Lugar =</span> <span class="fu">case_when</span>(P3 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">&quot;Cabecera&quot;</span>, P3 <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">&quot;Centro Poblado&quot;</span>, P3 <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">&quot;Rural Disperso&quot;</span>)</span>
+<span id="cb8-11"><a href="analisis-exploratorio-de-datos.html#cb8-11" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-12"><a href="analisis-exploratorio-de-datos.html#cb8-12" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Tipo_Lugar =</span> <span class="fu">factor</span>(Tipo_Lugar, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Cabecera&quot;</span>, <span class="st">&quot;Centro Poblado&quot;</span>, <span class="st">&quot;Rural Disperso&quot;</span>)))</span>
+<span id="cb8-13"><a href="analisis-exploratorio-de-datos.html#cb8-13" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="analisis-exploratorio-de-datos.html#cb8-14" tabindex="-1"></a><span class="do">## Gráfico Unstacked para comparar brechas</span></span>
+<span id="cb8-15"><a href="analisis-exploratorio-de-datos.html#cb8-15" tabindex="-1"></a><span class="fu">ggplot</span>(tabla_plot, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Nombre_Region, <span class="sc">-</span>incidencia), <span class="at">y =</span> incidencia, <span class="at">fill =</span> Tipo_Lugar)) <span class="sc">+</span></span>
+<span id="cb8-16"><a href="analisis-exploratorio-de-datos.html#cb8-16" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">preserve =</span> <span class="st">&quot;single&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="analisis-exploratorio-de-datos.html#cb8-17" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">percent</span>(incidencia, <span class="at">accuracy =</span> <span class="fl">0.1</span>)), </span>
+<span id="cb8-18"><a href="analisis-exploratorio-de-datos.html#cb8-18" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb8-19"><a href="analisis-exploratorio-de-datos.html#cb8-19" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#34495e&quot;</span>, <span class="st">&quot;#2980b9&quot;</span>, <span class="st">&quot;#27ae60&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb8-20"><a href="analisis-exploratorio-de-datos.html#cb8-20" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Pobreza Multidimensional por Región y Ubicación&quot;</span>,</span>
+<span id="cb8-21"><a href="analisis-exploratorio-de-datos.html#cb8-21" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;La ruralidad dispersa (verde) es el punto más crítico en todas las regiones&quot;</span>,</span>
+<span id="cb8-22"><a href="analisis-exploratorio-de-datos.html#cb8-22" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Región&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Incidencia (H)&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Lugar (P3)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-23"><a href="analisis-exploratorio-de-datos.html#cb8-23" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>)</span></code></pre></div>
+<p><img src="Analisis-IPM-2025_files/figure-html/cruce_territorial-1.png" alt="" width="960" /></p>
+<p>En todas las regiones, sin excepción, <strong>la incidencia en la Ruralidad Dispersa</strong> (verde) es drásticamente superior a la de <strong>las Cabeceras</strong> (gris). El caso más alarmante es la Región Caribe, donde la pobreza rural alcanza el 44.5%, casi cuadruplicando la incidencia de su zona urbana (11.4%)</p>
+<p>Existe un gradiente de pobreza que va de norte a sur y de la periferia al centro. Mientras que Bogotá presenta una incidencia mínima (2.2%), regiones como la Caribe y Antioquia muestran niveles críticos en sus zonas rurales y centros poblados, lo que sugiere que el desarrollo económico de los centros urbanos no está permeando a sus periferias.</p>
+<p>La pobreza en este contexto no es solo un fenómeno de ingresos, sino un fenómeno de aislamiento geográfico. La política pública debe priorizar la convergencia regional, ya que ser pobre en la ruralidad del Caribe es una realidad estadística radicalmente distinta a serlo en Bogotá.</p>
+<hr />
+</div>
+<div id="perspectiva-de-género-en-la-jefatura" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Perspectiva de Género en la Jefatura<a href="analisis-exploratorio-de-datos.html#perspectiva-de-g%C3%A9nero-en-la-jefatura" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>¿Influye el sexo del jefe en la pobreza del hogar? Los datos sugieren una brecha que debe ser analizada bajo el lente de las cargas de cuidado.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="analisis-exploratorio-de-datos.html#cb9-1" tabindex="-1"></a>tabla_jefatura <span class="ot">&lt;-</span> diseno <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="analisis-exploratorio-de-datos.html#cb9-2" tabindex="-1"></a>  <span class="fu">group_by</span>(P6020_jefe) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="analisis-exploratorio-de-datos.html#cb9-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">incidencia =</span> <span class="fu">survey_mean</span>(POBRE, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="analisis-exploratorio-de-datos.html#cb9-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sexo =</span> <span class="fu">ifelse</span>(P6020_jefe <span class="sc">==</span> <span class="dv">1</span>, <span class="st">&quot;Hombre&quot;</span>, <span class="st">&quot;Mujer&quot;</span>))</span>
+<span id="cb9-5"><a href="analisis-exploratorio-de-datos.html#cb9-5" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="analisis-exploratorio-de-datos.html#cb9-6" tabindex="-1"></a><span class="fu">ggplot</span>(tabla_jefatura, <span class="fu">aes</span>(<span class="at">x =</span> Sexo, <span class="at">y =</span> incidencia, <span class="at">fill =</span> Sexo)) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="analisis-exploratorio-de-datos.html#cb9-7" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.6</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb9-8"><a href="analisis-exploratorio-de-datos.html#cb9-8" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">percent</span>(incidencia, <span class="at">accuracy =</span> <span class="fl">0.1</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="analisis-exploratorio-de-datos.html#cb9-9" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#2980b9&quot;</span>, <span class="st">&quot;#e84393&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb9-10"><a href="analisis-exploratorio-de-datos.html#cb9-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Pobreza según el Sexo del Jefe de Hogar&quot;</span>,</span>
+<span id="cb9-11"><a href="analisis-exploratorio-de-datos.html#cb9-11" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Incidencia (H)&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Jefatura&quot;</span>) <span class="sc">+</span></span>
+<span id="cb9-12"><a href="analisis-exploratorio-de-datos.html#cb9-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="Analisis-IPM-2025_files/figure-html/jefatura_sexo-1.png" alt="" width="960" /></p>
+<p>Al observar la jefatura del hogar, los datos muestran una clara desventaja para las mujeres. La incidencia de pobreza en hogares liderados por mujeres (11.1%) es significativamente mayor que en los liderados por hombres (9.4%). Esta brecha de 1.7 puntos porcentuales sugiere que las jefas de hogar enfrentan barreras adicionales, posiblemente asociadas a la carga de cuidado no remunerado y a condiciones de mayor precariedad en el mercado laboral.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="objetivos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusiónes-la-geografía-y-estructura-de-la-privación.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Analisis IPM 2025.pdf", "Analisis IPM 2025.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

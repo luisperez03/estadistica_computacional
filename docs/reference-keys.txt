@@ -1,0 +1,15 @@
+resumen
+ipm-una-visión-integral-de-la-calidad-de-vida
+objetivos
+objetivo-general
+objetivos-específicos
+analisis-exploratorio-de-datos
+carga-y-limpieza-de-los-microdatos
+distribución-del-ipm-el-termómetro-de-carencias
+visualización-cuartílica-y-frecuencia
+incidencia-h-el-dato-oficial
+composición-de-la-pobreza-perfil-de-privaciones
+brechas-territoriales-región-y-clase-p3
+perspectiva-de-género-en-la-jefatura
+conclusiónes-la-geografía-y-estructura-de-la-privación
+referencias
