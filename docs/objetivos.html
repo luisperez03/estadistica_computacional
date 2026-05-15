@@ -23,7 +23,7 @@
 <meta name="author" content="Luis Alberto Perez Lopez" />
 
 
-<meta name="date" content="2026-04-24" />
+<meta name="date" content="2026-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -98,8 +98,15 @@
 <li class="chapter" data-level="4.5" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html#brechas-territoriales-regi%C3%B3n-y-clase-p3"><i class="fa fa-check"></i><b>4.5</b> Brechas Territoriales: Región y Clase (P3)</a></li>
 <li class="chapter" data-level="4.6" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html#perspectiva-de-g%C3%A9nero-en-la-jefatura"><i class="fa fa-check"></i><b>4.6</b> Perspectiva de Género en la Jefatura</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="conclusiónes-la-geografía-y-estructura-de-la-privación.html"><a href="conclusiónes-la-geografía-y-estructura-de-la-privación.html"><i class="fa fa-check"></i><b>5</b> Conclusiónes: La Geografía y Estructura de la Privación</a></li>
-<li class="chapter" data-level="6" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>6</b> Referencias</a></li>
+<li class="chapter" data-level="5" data-path="análisis-inferencial.html"><a href="análisis-inferencial.html"><i class="fa fa-check"></i><b>5</b> <strong>Análisis Inferencial</strong></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="análisis-inferencial.html"><a href="análisis-inferencial.html#incidencia-de-g%C3%A9nero-en-hogares-monoparentales-sobre-el-ipm"><i class="fa fa-check"></i><b>5.1</b> <strong>Incidencia de género en hogares monoparentales sobre el IPM</strong></a></li>
+<li class="chapter" data-level="5.2" data-path="análisis-inferencial.html"><a href="análisis-inferencial.html#regiones-y-su-incidencia-en-la-pobreza"><i class="fa fa-check"></i><b>5.2</b> <strong>Regiones y su incidencia en la pobreza</strong></a></li>
+<li class="chapter" data-level="5.3" data-path="análisis-inferencial.html"><a href="análisis-inferencial.html#pobreza-en-cabeceras-principales-vs-centros-poblados-y-rurales"><i class="fa fa-check"></i><b>5.3</b> Pobreza en cabeceras principales vs centros poblados y rurales</a></li>
+<li class="chapter" data-level="5.4" data-path="análisis-inferencial.html"><a href="análisis-inferencial.html#n%C3%BAmero-de-habitantes-del-hogar-vs-pobreza-multidimensional"><i class="fa fa-check"></i><b>5.4</b> <strong>Número de habitantes del hogar vs pobreza multidimensional</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="conclusiónes-la-geografía-y-estructura-de-la-privación.html"><a href="conclusiónes-la-geografía-y-estructura-de-la-privación.html"><i class="fa fa-check"></i><b>6</b> Conclusiónes: La Geografía y Estructura de la Privación</a></li>
+<li class="chapter" data-level="7" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>7</b> Referencias</a></li>
 </ul>
 
       </nav>
@@ -121,15 +128,15 @@
 <h1><span class="header-section-number">2</span> Objetivos<a href="objetivos.html#objetivos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="objetivo-general" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Objetivo General<a href="objetivos.html#objetivo-general" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Explorar y analizar la estructura de la pobreza multidimensional en Colombia durante 2025, procesando los microdatos oficiales (<a href="https://microdatos.dane.gov.co/index.php/catalog/903">datos aquí</a>) para identificar los factores críticos que determinan la calidad de vida y las brechas persistentes en el territorio nacional.</p>
+<p>Explorar y analizar la estructura de la pobreza multidimensional en Colombia durante 2025, procesando los microdatos oficiales del DANE (<a href="https://microdatos.dane.gov.co/index.php/catalog/903">datos aquí</a>) para identificar los factores críticos que determinan la calidad de vida y las brechas a lo largo del territorio nacional.</p>
 </div>
 <div id="objetivos-específicos" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Objetivos Específicos<a href="objetivos.html#objetivos-espec%C3%ADficos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><strong>Evaluar el panorma nacional:</strong> Contrastar los niveles de incidencia del IPM entre regiones pricipales del territorio para evidenciar la influencia territorial sobre la calidad de vida de los ciudadanos.</li>
-<li><strong>Descomponer la intensidad de la pobreza:</strong> Identificar mediante la manipulación de variables cuáles son las carencias específicas (educación, salud, vivienda, etc.) que más aportan al índice y dónde están los “cuellos de botella” más sensibles.</li>
-<li><strong>Explorar las asimetrías territoriales:</strong> Desglosar la data por departamentos y dominios geográficos (urbano vs. rural) para evidenciar las brechas ocultas en la expansion del territorio.</li>
-<li><strong>Analizar el impacto de la jefatura de hogar:</strong> Investigar cómo influye el género de quien encabeza la familia en la probabilidad de ser pobre multidimensional, buscando patrones de desigualdad subyacentes.</li>
+<li><p>Examinar las diferencias significativas entre la calidad de vida de un hogar según si esta encabezado por una mujer o un hombre, reflejando evidencias de brechas de género.</p></li>
+<li><p>Confirmar que las variaciones observadas en la pobreza entre departamentos son estadísticamente significativas.</p></li>
+<li><p>Analizar de forma comparativa la pobreza en las zonas urbanas frente vs las rurales, evaluando si la ubicación del hogar muestra diferencias estadísticas significativa.</p></li>
+<li><p>Probar que la cantidad de personas que conforman un hogar aumenta la proporción de ser clasificado como pobre multidimensional.</p></li>
 </ul>
 
 </div>

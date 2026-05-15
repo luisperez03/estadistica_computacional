@@ -23,7 +23,7 @@
 <meta name="author" content="Luis Alberto Perez Lopez" />
 
 
-<meta name="date" content="2026-04-24" />
+<meta name="date" content="2026-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="diccionario-de-variables.html"/>
-<link rel="next" href="conclusiónes-la-geografía-y-estructura-de-la-privación.html"/>
+<link rel="next" href="análisis-inferencial.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -163,8 +163,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html#brechas-territoriales-regi%C3%B3n-y-clase-p3"><i class="fa fa-check"></i><b>4.5</b> Brechas Territoriales: Región y Clase (P3)</a></li>
 <li class="chapter" data-level="4.6" data-path="analisis-exploratorio-de-datos.html"><a href="analisis-exploratorio-de-datos.html#perspectiva-de-g%C3%A9nero-en-la-jefatura"><i class="fa fa-check"></i><b>4.6</b> Perspectiva de Género en la Jefatura</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="conclusiónes-la-geografía-y-estructura-de-la-privación.html"><a href="conclusiónes-la-geografía-y-estructura-de-la-privación.html"><i class="fa fa-check"></i><b>5</b> Conclusiónes: La Geografía y Estructura de la Privación</a></li>
-<li class="chapter" data-level="6" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>6</b> Referencias</a></li>
+<li class="chapter" data-level="5" data-path="análisis-inferencial.html"><a href="análisis-inferencial.html"><i class="fa fa-check"></i><b>5</b> <strong>Análisis Inferencial</strong></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="análisis-inferencial.html"><a href="análisis-inferencial.html#incidencia-de-g%C3%A9nero-en-hogares-monoparentales-sobre-el-ipm"><i class="fa fa-check"></i><b>5.1</b> <strong>Incidencia de género en hogares monoparentales sobre el IPM</strong></a></li>
+<li class="chapter" data-level="5.2" data-path="análisis-inferencial.html"><a href="análisis-inferencial.html#regiones-y-su-incidencia-en-la-pobreza"><i class="fa fa-check"></i><b>5.2</b> <strong>Regiones y su incidencia en la pobreza</strong></a></li>
+<li class="chapter" data-level="5.3" data-path="análisis-inferencial.html"><a href="análisis-inferencial.html#pobreza-en-cabeceras-principales-vs-centros-poblados-y-rurales"><i class="fa fa-check"></i><b>5.3</b> Pobreza en cabeceras principales vs centros poblados y rurales</a></li>
+<li class="chapter" data-level="5.4" data-path="análisis-inferencial.html"><a href="análisis-inferencial.html#n%C3%BAmero-de-habitantes-del-hogar-vs-pobreza-multidimensional"><i class="fa fa-check"></i><b>5.4</b> <strong>Número de habitantes del hogar vs pobreza multidimensional</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="conclusiónes-la-geografía-y-estructura-de-la-privación.html"><a href="conclusiónes-la-geografía-y-estructura-de-la-privación.html"><i class="fa fa-check"></i><b>6</b> Conclusiónes: La Geografía y Estructura de la Privación</a></li>
+<li class="chapter" data-level="7" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>7</b> Referencias</a></li>
 </ul>
 
       </nav>
@@ -184,8 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="analisis-exploratorio-de-datos" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">4</span> Analisis Exploratorio de Datos<a href="analisis-exploratorio-de-datos.html#analisis-exploratorio-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Este análisis exploratorio de datos (EDA) examina la pobreza multidimensional en Colombia bajo una óptica integral, con el finde identificar las carencias estructurales en el acceso a derechos básicos. A través de la integración de microdatos de hogares, personas y viviendas, observando la incidencia de la pobreza mediante el Índice de Pobreza Multidimensional (IPM), desglosando el impacto de las 15 privaciones definidas por el DANE.
-Profundizando en las diferencias territoriales, entre lo urbano y lo rural, la heterogeneidad regional, la composicion de la pobreza y las brechas de género en la jefatura del hogar.</p>
+<p>Este análisis exploratorio de datos (EDA) examina la pobreza multidimensional en Colombia bajo una óptica integral, con el finde identificar las carencias estructurales en el acceso a derechos básicos. A través de la integración de microdatos de hogares, personas y viviendas, observando la incidencia de la pobreza mediante el Índice de Pobreza Multidimensional (IPM), desglosando el impacto de las 15 privaciones definidas por el DANE. Profundizando en las diferencias territoriales, entre lo urbano y lo rural, la heterogeneidad regional, la composicion de la pobreza y las brechas de género en la jefatura del hogar.</p>
 <div id="carga-y-limpieza-de-los-microdatos" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Carga y limpieza de los microdatos<a href="analisis-exploratorio-de-datos.html#carga-y-limpieza-de-los-microdatos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Integramos las tres fuentes principales. Aquí cruzo la jefatura del hogar con las condiciones de vivienda para tener el perfil sociodemográfico completo.</p>
@@ -286,12 +292,9 @@ Profundizando en las diferencias territoriales, entre lo urbano y lo rural, la h
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>El IPM poblacional presenta un promedio de 0.1706 (</strong><span class="math inline">\(sd=0.119\)</span>). Adicionalmente el análisis por cuantiles muestra que al menos el <strong>75% de la población</strong> alcanza un índice de hasta <strong>0.25</strong>, lo que equivale a una acumulación de <strong>3 a 4 privaciones</strong> según la ponderación del índice. Esto ubica a la gran mayoría de la población en una <strong>zona de vulnerabilidad crítica</strong>, pues estan a solo 1 o 2 carencias adicionales de superar el umbral de <strong>0.33</strong> y ser clasificados formalmente bajo la condición de pobreza multidimensional.</li>
-<li><strong>Sesgo a la derecha y Concentración</strong>: La distribución no es normal; está fuertemente sesgada a la derecha. Esto indica que, aunque la mayoría de la población tiene niveles bajos de privación, existe una “cola” de personas que acumulan múltiples carencias críticas y simultáneas.</li>
-<li><strong>Umbral de pobreza:</strong> La línea roja en <span class="math inline">\(0.33\)</span> es el punto de corte. Solo la masa de población a la derecha de esa línea es considerada técnicamente <strong>pobre multidimensional</strong>, lo que permite separar visualmente la incidencia del problema.</li>
-<li><strong>Volumen Absoluto vs. Proporción:</strong> la grafica se encuentra en millones de personas en lugar de una densidad de probabilidad, el gráfico resalta la <strong>magnitud real</strong> de la situacion social y Permite dimensionar, aunque las barras de la derecha sean más bajas, representan a millones de personas en situación de vulnerabilidad.</li>
-</ul>
+<p>El IPM poblacional presenta un promedio de 0.1706 (<span class="math inline">\(sd=0.119\)</span>). Adicionalmente el análisis por cuantiles muestra que al menos el <strong>75% de la población</strong> alcanza un índice de hasta <strong>0.25</strong>, lo que equivale a una acumulación de <strong>3 a 4 privaciones</strong> según la ponderación del índice. Esto ubica a la gran mayoría de la población en una <em>zona de vulnerabilidad crítica</em>, pues estan a solo 1 o 2 carencias adicionales de superar el umbral de <strong>0.33</strong> y ser clasificados formalmente bajo la condición de pobreza multidimensional.</p>
+<p>El indice presenta un sesgo a la derecha, por lo que se entiednde que no sigue una distribución es normal. Aunque existen personas con pocas privaciones, sí existe una cola de personas que acumulan múltiples carencias críticas y simultáneas.</p>
+<p>El momento en que se clasifica como pobre multidimensional esta marcado por La línea roja en <span class="math inline">\(0.33\)</span>. despues de eso solo la masa de población a la derecha de esa línea es considerada técnicamente Pobre.</p>
 <hr />
 </div>
 </div>
@@ -382,15 +385,15 @@ Profundizando en las diferencias territoriales, entre lo urbano y lo rural, la h
 <span id="cb7-25"><a href="analisis-exploratorio-de-datos.html#cb7-25" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="Analisis-IPM-2025_files/figure-html/carencias%20sensibilidad-1.png" alt="" width="960" /></p>
 <p>Este grafico nos permite permite identificar qué privaciones pesan mas sobre el un IPM. el grafico representa la realidad de los 5.41 millones de personas identificadas en pobreza.</p>
-<p><strong>Simultaneidad de privaciones:</strong> Indicadores como “Paredes”, “Inasistencia Escolar” y “Trabajo Infantil” presentan las medianas de IPM más altas (desplazadas hacia la derecha). Esto indica que estas privaciones no suelen presentarse solas, es decir una persona con deficiencias en la estructura de su vivienda o con niños fuera del sistema escolar tiende a acumular un paquete de privaciones mucho más pesado, elevando su índice cerca del 0.45 - 0.50.</p>
-<p><strong>Carencias Base vs. Carencias Críticas:</strong> Es notable que el “Empleo Formal” y el “Logro Educativo”, a pesar de ser los más frecuentes en la población (según el gráfico de barras anterior), tienen medianas de intensidad más bajas y cajas más compactas. Esto confirma que son carencias comunes o transversales ya que afectan tanto a los “pobres extremos” como a los que están apenas por encima del umbral de 0.33, no son por si solas la razon de la pobreza, sino que son comun denominador del inicio de la pobreza multidimensional.</p>
-<p><strong>Heterogeneidad y Casos Críticos (Outliers):</strong> La presencia de valores extremos que alcanzan un IPM de 0.8 en dimensiones como “Acueducto”, “Alcantarillado” e “Inasistencia Escolar” revela la existencia de focos de pobreza multidimensional extrema. Estos individuos sufren privaciones en casi la totalidad de las 15 dimensiones analizadas, ellos representan los desafíos más urgentes para la política pública.</p>
-<p>Conclusión para la política pública: Mientras que el empleo formal es el problema más extendido, la intervención en vivienda (paredes y hacinamiento) y educación infantil es lo que más rápido podría reducir la “intensidad” de la pobreza, ya que son las dimensiones que mantienen a los hogares atrapados en los valores más altos del IPM.</p>
+<p>Indicadores como “Paredes”, “Inasistencia Escolar” y “Trabajo Infantil” presentan las medianas de IPM más altas, indicando que estas privaciones no vienen solas, es decir una persona con deficiencias en la estructura de su vivienda o con niños fuera del sistema escolar tiende a acumular un grupo de privaciones mucho más pesado, elevando su índice cerca del 0.45 - 0.50.</p>
+<p>Es evidente que el “Empleo Formal” y el “Logro Educativo”, auqnue son los mas frecuentes, tienen medianas de intensidad más bajas y cajas más compactas. mostrando que son carencias comunes, pues afectan tanto a los “pobres extremos” como a los que están apenas despues del umbral de 0.33, no son causa directa de pobreza pero si son comun denominador del inicio de la pobreza multidimensional.</p>
+<p>La presencia de valores extremos que alcanzan un IPM de 0.8 en dimensiones como “Acueducto”, “Alcantarillado” e “Inasistencia Escolar” revela puntos de pobreza multidimensional extrema. Estas personas sufren privaciones en casi la todas las 15 dimensiones medidas por el DANE, son el desafío más urgente para la política pública.</p>
+<p>Mientras que el empleo formal es el problema más extendido, la intervención en vivienda (paredes y hacinamiento) y educación infantil es lo que más rápido podría reducir la “intensidad” de la pobreza, ya que son las dimensiones que mantienen a los hogares atrapados en los valores más altos del IPM.</p>
 <hr />
 </div>
 <div id="brechas-territoriales-región-y-clase-p3" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> Brechas Territoriales: Región y Clase (P3)<a href="analisis-exploratorio-de-datos.html#brechas-territoriales-regi%C3%B3n-y-clase-p3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Aquí cruzamos las regiones con el tipo de asentamiento. Es evidente el “gradiente de pobreza”: a mayor ruralidad, mayor incidencia.</p>
+<p>Aquí cruzamos las regiones con el tipo de asentamiento. Es evidente el hacia donde apunta y se maximiza la pobreza: a mayor ruralidad, mayor incidencia.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="analisis-exploratorio-de-datos.html#cb8-1" tabindex="-1"></a>nombres_regiones <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1&quot;</span> <span class="ot">=</span> <span class="st">&quot;Caribe&quot;</span>, <span class="st">&quot;2&quot;</span> <span class="ot">=</span> <span class="st">&quot;Oriental&quot;</span>, <span class="st">&quot;3&quot;</span> <span class="ot">=</span> <span class="st">&quot;Central&quot;</span>, </span>
 <span id="cb8-2"><a href="analisis-exploratorio-de-datos.html#cb8-2" tabindex="-1"></a>                      <span class="st">&quot;4&quot;</span> <span class="ot">=</span> <span class="st">&quot;Pacífica&quot;</span>, <span class="st">&quot;5&quot;</span> <span class="ot">=</span> <span class="st">&quot;Antioquia&quot;</span>, <span class="st">&quot;6&quot;</span> <span class="ot">=</span> <span class="st">&quot;Bogotá&quot;</span>)</span>
 <span id="cb8-3"><a href="analisis-exploratorio-de-datos.html#cb8-3" tabindex="-1"></a></span>
@@ -415,7 +418,7 @@ Profundizando en las diferencias territoriales, entre lo urbano y lo rural, la h
 <span id="cb8-22"><a href="analisis-exploratorio-de-datos.html#cb8-22" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Región&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Incidencia (H)&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Lugar (P3)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb8-23"><a href="analisis-exploratorio-de-datos.html#cb8-23" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>)</span></code></pre></div>
 <p><img src="Analisis-IPM-2025_files/figure-html/cruce_territorial-1.png" alt="" width="960" /></p>
-<p>En todas las regiones, sin excepción, <strong>la incidencia en la Ruralidad Dispersa</strong> (verde) es drásticamente superior a la de <strong>las Cabeceras</strong> (gris). El caso más alarmante es la Región Caribe, donde la pobreza rural alcanza el 44.5%, casi cuadruplicando la incidencia de su zona urbana (11.4%)</p>
+<p>En todas las regiones, sin excepción, <strong>la incidencia en la Ruralidad Dispersa</strong> (verde) es drásticamente superior a la de <strong>las Cabeceras</strong> (gris). El caso más evidente es la Región Caribe, donde la pobreza rural alcanza el 44.5%, casi cuatro veces la incidencia de su zona urbana (11.4%)</p>
 <p>Existe un gradiente de pobreza que va de norte a sur y de la periferia al centro. Mientras que Bogotá presenta una incidencia mínima (2.2%), regiones como la Caribe y Antioquia muestran niveles críticos en sus zonas rurales y centros poblados, lo que sugiere que el desarrollo económico de los centros urbanos no está permeando a sus periferias.</p>
 <p>La pobreza en este contexto no es solo un fenómeno de ingresos, sino un fenómeno de aislamiento geográfico. La política pública debe priorizar la convergencia regional, ya que ser pobre en la ruralidad del Caribe es una realidad estadística radicalmente distinta a serlo en Bogotá.</p>
 <hr />
@@ -446,7 +449,7 @@ Profundizando en las diferencias territoriales, entre lo urbano y lo rural, la h
         </div>
       </div>
 <a href="diccionario-de-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="conclusiónes-la-geografía-y-estructura-de-la-privación.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="análisis-inferencial.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

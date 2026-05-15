@@ -14,3 +14,8 @@ brechas-territoriales-región-y-clase-p3
 perspectiva-de-género-en-la-jefatura
 conclusiónes-la-geografía-y-estructura-de-la-privación
 referencias
+análisis-inferencial
+incidencia-de-género-en-hogares-monoparentales-sobre-el-ipm
+regiones-y-su-incidencia-en-la-pobreza
+pobreza-en-cabeceras-principales-vs-centros-poblados-y-rurales
+número-de-habitantes-del-hogar-vs-pobreza-multidimensional
